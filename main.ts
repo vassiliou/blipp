@@ -57,8 +57,9 @@ input.onButtonPressed(Button.B, function () {
         `)
     TIMER = 0
 })
-let TIMER = 0
 let SLEEP = 0
+let TIMER = 0
+TIMER = 0
 basic.showLeds(`
     . # . # .
     . # . # .
@@ -66,33 +67,31 @@ basic.showLeds(`
     . # . # .
     . # # # .
     `)
-basic.forever(function () {
-    if (TIMER < 10) {
+loops.everyInterval(600000, function () {
+    if (TIMER > 20) {
         music.setVolume(62)
         music.play(music.stringPlayable("C5 A F B G - - - ", 120), music.PlaybackMode.UntilDone)
+        basic.showLeds(`
+            . . . . .
+            . # . # .
+            . . . . .
+            . # # # .
+            . # . # .
+            `)
     }
-    basic.showLeds(`
-        . . . . .
-        . # . # .
-        . . . . .
-        . # # # .
-        . # . # .
-        `)
 })
-basic.forever(function () {
-    if (TIMER == 5.5) {
+loops.everyInterval(300000, function () {
+    if (TIMER == 10) {
         music.play(music.stringPlayable("C5 A C5 A F - - - ", 120), music.PlaybackMode.UntilDone)
+        basic.showLeds(`
+            . . . . .
+            . # . # .
+            . . . . .
+            . # # # .
+            . . . . .
+            `)
     }
-    basic.showLeds(`
-        . . . . .
-        . # . # .
-        . . . . .
-        . # # # .
-        . . . . .
-        `)
 })
 loops.everyInterval(30000, function () {
     TIMER += 0.5
-    music.setVolume(50)
-    music.play(music.stringPlayable("C5 B C5 - - - - - ", 120), music.PlaybackMode.UntilDone)
 })
