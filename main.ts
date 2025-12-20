@@ -15,6 +15,13 @@ input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
     }
     music.setBuiltInSpeakerEnabled(true)
     TIMER = 0
+    basic.showLeds(`
+        . # . # .
+        . # . # .
+        . . . . .
+        . # . # .
+        . # # # .
+        `)
     music.play(music.builtinPlayableSoundEffect(soundExpression.yawn), music.PlaybackMode.UntilDone)
 })
 input.onButtonPressed(Button.A, function () {
