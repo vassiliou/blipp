@@ -2,14 +2,15 @@ input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
     SLEEP = 0
     music.play(music.builtinPlayableSoundEffect(soundExpression.yawn), music.PlaybackMode.UntilDone)
     music.setBuiltInSpeakerEnabled(false)
-    basic.showLeds(`
-        . . . . .
-        # # . # #
-        . . . . .
-        . # # . .
-        . # # . .
-        `)
+    basic.clearScreen()
     for (let index = 0; index < 100; index++) {
+        basic.showLeds(`
+            . . . . .
+            # # . # #
+            . . . . .
+            . # # . .
+            . # # . .
+            `)
         basic.pause(1000)
         SLEEP += 1
     }
